@@ -19,27 +19,54 @@ body {
 
 /* Image Gallery Styles */
 .gallery {
-  max-width: 100%;
-  overflow-x: auto;
-  padding-bottom: 1rem;
+  overflow: hidden; /* Hide overflow */
+  width: 100%;
+  padding: 0 1rem; /* Add horizontal padding */
 }
 
 .carousel {
   display: flex;
-  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .slide {
-  flex: 0 0 auto;
+  flex: 0 0 100%; /* Each slide takes full width of the container */
   scroll-snap-align: start;
   background: #fff;
   border-radius: 8px;
-  width: 300px;
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+
+/* 2 per view on medium screens */
+@media (min-width: 600px) {
+  .slide {
+    flex: 0 0 50%;
+  }
+}
+
+/* 3 per view on large screens */
+@media (min-width: 900px) {
+  .slide {
+    flex: 0 0 33.3333%;
+  }
+}
+
+.swipe-hint {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: -10px;
+  margin-bottom: 1rem;
 }
 
 .slide img,
