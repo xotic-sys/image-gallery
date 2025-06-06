@@ -1,4 +1,9 @@
-﻿.lw { font-size: 60px; }/* Reset and Base Styles */
+﻿/* Large Title Class */
+.lw {
+  font-size: 60px;
+}
+
+/* Reset and Base Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,6 +17,7 @@ body {
   line-height: 1.6;
 }
 
+/* Image Gallery Styles */
 .gallery {
   max-width: 100%;
   overflow-x: auto;
@@ -36,7 +42,8 @@ body {
   text-align: center;
 }
 
-.slide img {
+.slide img,
+.slide object {
   width: 100%;
   height: auto;
   border-radius: 4px;
@@ -55,17 +62,17 @@ body {
 }
 
 /* Header Navigation */
-.navbar {
-  display: block;
+nav {
+  display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
   background-color: #fff;
   font-weight: bold;
 }
 
-.navbar a {
+nav a {
   text-decoration: none;
   color: #007acc;
 }
@@ -81,8 +88,8 @@ body {
 
 /* Sidebar Table of Contents */
 .sidebar {
-  flex: 4 4 10%;
-  min-width: 0px;
+  flex: 0 0 10%;
+  min-width: 0;
   margin-right: 30px;
 }
 
@@ -90,7 +97,7 @@ body {
   position: relative;
   top: 30px;
   background: #eee;
-  padding: 100px;
+  padding: 40px;
   border-radius: 15px;
 }
 
@@ -104,9 +111,9 @@ body {
 }
 
 .foot {
-  font-size: 0.80em;
+  font-size: 0.8em;
   color: #666;
-  margin-top: 0px;
+  margin-top: 10px;
 }
 
 .foot a {
@@ -116,7 +123,7 @@ body {
 
 /* Main Content */
 .content {
-  flex: 3;
+  flex: 1;
 }
 
 .content h1,
@@ -139,7 +146,7 @@ body {
   }
 
   .sidebar {
-    margin: 20px;
+    margin: 20px 0;
   }
 
   .content h1,
@@ -150,12 +157,12 @@ body {
 }
 
 @media (max-width: 480px) {
-  .navbar {
+  nav {
     flex-direction: column;
     align-items: center;
   }
 
-  .navbar a {
+  nav a {
     margin: 10px;
   }
 }
