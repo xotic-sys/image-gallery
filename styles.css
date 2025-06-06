@@ -1,4 +1,4 @@
-﻿/* Reset and Base Styles */
+﻿.lw { font-size: 60px; }/* Reset and Base Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,9 +14,9 @@ body {
 
 /* Header Navigation */
 .navbar {
-  display: flex;
+  display: block;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 20px;
   padding: 20px;
   background-color: #fff;
@@ -32,24 +32,24 @@ body {
 .container {
   display: flex;
   flex-direction: row;
-  max-width: 1200px;
+  max-width: 1920px;
   margin: auto;
   padding: 20px;
 }
 
 /* Sidebar Table of Contents */
 .sidebar {
-  flex: 1;
-  min-width: 200px;
+  flex: 4 4 10%;
+  min-width: 0px;
   margin-right: 30px;
 }
 
 .toc {
-  position: sticky;
+  position: relative;
   top: 30px;
   background: #eee;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 100px;
+  border-radius: 15px;
 }
 
 .toc ul {
@@ -64,7 +64,7 @@ body {
 .foot {
   font-size: 0.80em;
   color: #666;
-  margin-top: 600px;
+  margin-top: 0px;
 }
 
 .foot a {
@@ -97,7 +97,7 @@ body {
   }
 
   .sidebar {
-    margin: 0 0 20px 0;
+    margin: 20px;
   }
 
   .content h1,
@@ -114,6 +114,6 @@ body {
   }
 
   .navbar a {
-    margin: 10px 0;
+    margin: 10px;
   }
 }
